@@ -1,6 +1,8 @@
+package entretien;
+
 import java.util.UUID;
 
-public class EntretienID
+class EntretienID
 {
     private UUID uuid;
 

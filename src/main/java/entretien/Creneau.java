@@ -1,13 +1,22 @@
+package entretien;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Objects;
 
-public class Creneau
+class Creneau
 {
     private LocalDate date;
     private LocalTime heureDebut;
     private LocalTime heureFin;
+
+    public Creneau(LocalDateTime dateTime, Heure duree)
+    {
+        this.date = dateTime.toLocalDate();
+        this.heureDebut = dateTime.toLocalTime();
+        this.heureFin = this.heureDebut.plusHours(duree.getNbHeure());
+    }
 
     public LocalDate getDate()
     {
@@ -22,13 +31,6 @@ public class Creneau
     public LocalTime getHeureFin()
     {
         return heureFin;
-    }
-
-    public Creneau(LocalDateTime dateTime, Heure duree)
-    {
-        this.date = dateTime.toLocalDate();
-        this.heureDebut = dateTime.toLocalTime();
-        this.heureFin = this.heureDebut.plusHours(duree.getNbHeure());
     }
 
     @Override

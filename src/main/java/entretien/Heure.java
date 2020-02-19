@@ -1,4 +1,6 @@
-public class Heure
+package entretien;
+
+class Heure
 {
     private int nbHeure;
 

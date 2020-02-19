@@ -1,4 +1,7 @@
+package entretien;
+
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Entretien
 {
@@ -6,6 +9,15 @@ public class Entretien
     private EntretienStatus statut;
     private Creneau creneau;
     private String raisonAnnulation;
+    private Candidat candidat;
+
+    public Entretien(LocalDateTime date, Candidat candidat)
+    {
+        this.entretienID = new EntretienID();
+        this.creneau = new Creneau(date, new Heure(2));
+        this.candidat = candidat;
+        this.statut = EntretienStatus.EN_ATTENTE;
+    }
 
     public EntretienID getEntretienID()
     {
@@ -25,13 +37,6 @@ public class Entretien
     public String getRaisonAnnulation()
     {
         return raisonAnnulation;
-    }
-
-    public Entretien(Creneau creneau)
-    {
-        this.entretienID = new EntretienID();
-        this.creneau = creneau;
-        this.statut = EntretienStatus.EN_ATTENTE;
     }
 
     public void confirmer()

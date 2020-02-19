@@ -1,4 +1,6 @@
-public enum EntretienStatus
+package entretien;
+
+enum EntretienStatus
 {
     CONFIRME,
     ANNULE,
