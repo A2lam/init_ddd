@@ -4,17 +4,17 @@ import model.entretien.Entretien;
 import model.entretien.Entretiens;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 public class EntretienList implements Entretiens
 {
-    ArrayList<Entretien> entretiens;
+    static ArrayList<Entretien> entretiens = new ArrayList<>();
 
     @Override
     public void creerEntretien(Entretien entretien)
     {
+        // TODO : Implémenter les verifs par rapport aux disponibilités
+        entretiens.add(entretien);
     }
 
     @Override
