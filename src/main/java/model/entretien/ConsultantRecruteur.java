@@ -1,4 +1,4 @@
-package entretien;
+package model.entretien;
 
 public class ConsultantRecruteur {
     private String nom;

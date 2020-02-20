@@ -1,4 +1,4 @@
-package entretien;
+package model.entretien;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -43,12 +43,12 @@ public class Entretien
     {
         if (this.statut == EntretienStatus.ANNULE)
         {
-            System.out.println("Impossible de confirmer un entretien déjà annulé");
+            System.out.println("Impossible de confirmer un model.entretien déjà annulé");
             return;
         }
         else if (this.creneau.getDate().isBefore(LocalDate.now()))
         {
-            System.out.println("Impossible de confirmer un entretien qui debute dans le passé");
+            System.out.println("Impossible de confirmer un model.entretien qui debute dans le passé");
             return;
         }
 

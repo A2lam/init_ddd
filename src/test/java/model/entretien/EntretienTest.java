@@ -1,4 +1,4 @@
-package entretien;
+package model.entretien;
 
 import org.junit.Test;
 import java.time.LocalDateTime;
