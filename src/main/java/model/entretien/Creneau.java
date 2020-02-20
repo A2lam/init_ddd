@@ -1,5 +1,7 @@
 package model.entretien;
 
+import common.dto.entretien.CreneauDTO;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -16,6 +18,12 @@ class Creneau
         this.date = dateTime.toLocalDate();
         this.heureDebut = dateTime.toLocalTime();
         this.heureFin = this.heureDebut.plusHours(duree.getNbHeure());
+    }
+
+    public Creneau(CreneauDTO creneauDTO){
+        this.date = creneauDTO.getDate();
+        this.heureDebut = creneauDTO.getHeureDebut();
+        this.heureFin = creneauDTO.getHeureFin();
     }
 
     public LocalDate getDate()

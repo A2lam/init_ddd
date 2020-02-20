@@ -1,4 +1,4 @@
-package dto.entretien;
+package common.dto.entretien;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,6 +16,8 @@ public class CreneauDTO
         this.heureDebut = dateTime.toLocalTime();
         this.heureFin = this.heureDebut.plusHours(duree.getNbHeure());
     }
+
+    public  CreneauDTO(){ }
 
     public LocalDate getDate()
     {

@@ -1,14 +1,15 @@
-package dto.entretien;
+package common.dto.entretien;
 
 import model.entretien.Entretien;
 import model.entretien.EntretienID;
+import model.entretien.EntretienStatus;
 
 import java.time.LocalDateTime;
 
 public class EntretienDTO
 {
     private EntretienID entretienID;
-    private EntretienStatusDTO statut;
+    private EntretienStatus statut;
     private CreneauDTO creneau;
     private String raisonAnnulation;
     private CandidatDTO candidat;
@@ -18,7 +19,15 @@ public class EntretienDTO
         this.entretienID = new EntretienID();
         this.creneau = new CreneauDTO(date, new HeureDTO(2));
         this.candidat = candidat;
-        this.statut = EntretienStatusDTO.EN_ATTENTE;
+        this.statut = EntretienStatus.EN_ATTENTE;
+    }
+
+    public EntretienDTO(Entretien entretien){
+        this.entretienID = entretien.getEntretienID();
+        this.creneau = entretien.getCreneauDTO();
+        this.candidat = entretien.getCandidatDTO();
+        this.raisonAnnulation = entretien.getRaisonAnnulation();
+        this.statut = entretien.getStatut();
     }
 
     public EntretienID getEntretienID()
@@ -31,12 +40,12 @@ public class EntretienDTO
         this.entretienID = entretienID;
     }
 
-    public EntretienStatusDTO getStatut()
+    public EntretienStatus getStatut()
     {
         return statut;
     }
 
-    public void setStatut(EntretienStatusDTO statut)
+    public void setStatut(EntretienStatus statut)
     {
         this.statut = statut;
     }

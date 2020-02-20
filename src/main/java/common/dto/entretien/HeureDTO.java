@@ -1,4 +1,4 @@
-package dto.entretien;
+package common.dto.entretien;
 
 public class HeureDTO
 {

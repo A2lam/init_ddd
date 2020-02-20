@@ -1,6 +1,7 @@
 package use_case.entretien;
 
 import infrastructure.entretien.EntretienList;
+import model.entretien.EntretienStatus;
 import model.entretien.Entretiens;
 import org.junit.*;
 import static org.junit.Assert.assertEquals;
@@ -8,9 +9,8 @@ import static org.junit.Assert.assertEquals;
 import java.time.LocalDateTime;
 import java.time.Month;
 
-import dto.entretien.CandidatDTO;
-import dto.entretien.EntretienDTO;
-import dto.entretien.EntretienStatusDTO;
+import common.dto.entretien.CandidatDTO;
+import common.dto.entretien.EntretienDTO;
 
 public class AnnulerEntretienTest
 {
@@ -43,6 +43,6 @@ public class AnnulerEntretienTest
 
         EntretienDTO entretienCanceled = entretiens.trouverEntretien(e1.getEntretienID().getUuid());
 
-        assertEquals(EntretienStatusDTO.ANNULE, entretienCanceled.getStatut());
+        assertEquals(EntretienStatus.ANNULE, entretienCanceled.getStatut());
     }
 }

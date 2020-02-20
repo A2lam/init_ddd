@@ -1,5 +1,9 @@
 package model.entretien;
 
+import common.dto.entretien.CandidatDTO;
+import common.dto.entretien.CreneauDTO;
+import common.dto.entretien.EntretienDTO;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -19,6 +23,14 @@ public class Entretien
         this.statut = EntretienStatus.EN_ATTENTE;
     }
 
+    public Entretien(EntretienDTO entretienDTO){
+        this.entretienID = entretienDTO.getEntretienID();
+        this.statut = entretienDTO.getStatut();
+        this.creneau = new Creneau(entretienDTO.getCreneau());
+        this.raisonAnnulation = entretienDTO.getRaisonAnnulation();
+        this.candidat = new Candidat(entretienDTO.getCandidat());
+    }
+
     public EntretienID getEntretienID()
     {
         return entretienID;
@@ -32,6 +44,27 @@ public class Entretien
     public Creneau getCreneau()
     {
         return creneau;
+    }
+
+    public CreneauDTO getCreneauDTO()
+    {
+        CreneauDTO creneauDTO = new CreneauDTO();
+        creneauDTO.setDate(creneau.getDate());
+        creneauDTO.setHeureDebut(creneau.getHeureDebut());
+        creneauDTO.setHeureFin(creneau.getHeureDebut());
+        return creneauDTO;
+    }
+
+    public Candidat getCandidat() {
+        return candidat;
+    }
+
+    public CandidatDTO getCandidatDTO(){
+        CandidatDTO candidatDTO = new CandidatDTO();
+        candidatDTO.setName(candidat.getName());
+        candidatDTO.setSpecialite(candidat.getSpecialite());
+        candidatDTO.setYearOfXP(candidat.getYearOfXP());
+        return candidatDTO;
     }
 
     public String getRaisonAnnulation()

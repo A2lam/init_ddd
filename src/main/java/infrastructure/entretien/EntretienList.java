@@ -1,5 +1,6 @@
 package infrastructure.entretien;
 
+import common.dto.entretien.EntretienDTO;
 import model.entretien.Entretien;
 import model.entretien.Entretiens;
 
@@ -8,17 +9,17 @@ import java.util.UUID;
 
 public class EntretienList implements Entretiens
 {
-    static ArrayList<Entretien> entretiens = new ArrayList<>();
+    static ArrayList<EntretienDTO> entretiens = new ArrayList<>();
 
     @Override
-    public void creerEntretien(Entretien entretien)
+    public void creerEntretien(EntretienDTO entretien)
     {
         // TODO : Implémenter les verifs par rapport aux disponibilités
         entretiens.add(entretien);
     }
 
     @Override
-    public Entretien trouverEntretien(UUID uuid)
+    public EntretienDTO trouverEntretien(UUID uuid)
     {
         return entretiens
                 .stream()
@@ -28,9 +29,9 @@ public class EntretienList implements Entretiens
     }
 
     @Override
-    public void modifierEntretien(Entretien entretien)
+    public void modifierEntretien(EntretienDTO entretien)
     {
-        Entretien entretiensFiltre = this.trouverEntretien(entretien.getEntretienID().getUuid());
+        EntretienDTO entretiensFiltre = this.trouverEntretien(entretien.getEntretienID().getUuid());
 
         if (entretiensFiltre != null)
         {

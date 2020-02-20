@@ -1,5 +1,6 @@
 package use_case.entretien;
 
+import common.dto.entretien.EntretienDTO;
 import infrastructure.entretien.EntretienList;
 import model.entretien.Entretien;
 import model.entretien.Entretiens;
@@ -17,8 +18,10 @@ public class ConfirmerEntretien
 
     public void confirmer(UUID uuid)
     {
-        Entretien entretien = entretiens.trouverEntretien(uuid);
+        EntretienDTO entretienDTO = entretiens.trouverEntretien(uuid);
+        Entretien entretien = new Entretien(entretienDTO);
         entretien.confirmer();
-        entretiens.modifierEntretien(entretien);
+        entretienDTO = new EntretienDTO(entretien);
+        entretiens.modifierEntretien(entretienDTO);
     }
 }

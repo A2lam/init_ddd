@@ -1,6 +1,6 @@
 package model.entretien;
 
-enum EntretienStatus
+public enum EntretienStatus
 {
     CONFIRME,
     ANNULE,

@@ -1,4 +1,4 @@
-package dto.entretien;
+package common.dto.entretien;
 
 public class CandidatDTO
 {
@@ -11,6 +11,10 @@ public class CandidatDTO
         this.name = name;
         this.specialite = specialite;
         this.yearOfXP = yearOfXP;
+    }
+
+    public CandidatDTO() {
+
     }
 
     public String getName()
