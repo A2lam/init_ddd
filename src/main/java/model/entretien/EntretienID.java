@@ -2,7 +2,7 @@ package model.entretien;
 
 import java.util.UUID;
 
-class EntretienID
+public class EntretienID
 {
     private UUID uuid;
 
