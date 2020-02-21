@@ -17,7 +17,11 @@ public class CreneauDTO
         this.heureFin = this.heureDebut.plusHours(duree.getNbHeure());
     }
 
-    public  CreneauDTO(){ }
+    public CreneauDTO(LocalDate date, LocalTime heureDebut, LocalTime heureFin) {
+        this.date = date;
+        this.heureDebut = heureDebut;
+        this.heureFin = heureFin;
+    }
 
     public LocalDate getDate()
     {

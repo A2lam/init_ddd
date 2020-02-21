@@ -1,5 +1,7 @@
 package common.dto.entretien;
 
+import model.entretien.Salle;
+
 import java.util.ArrayList;
 
 public class SalleDTO {
@@ -11,6 +13,12 @@ public class SalleDTO {
         this.name = name;
         this.capacite = capacite;
         this.creneaux = creneaux;
+    }
+
+    public SalleDTO(Salle salle){
+        this.name = salle.getName();
+        this.capacite = salle.getCapacite();
+        this.creneaux = salle.constructCreneauxDTO();
     }
 
     public String getName() {
