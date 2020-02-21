@@ -1,10 +1,13 @@
 package common.dto.entretien;
 
+import java.util.ArrayList;
+
 public class ConsultantRecruteurDTO
 {
     private String name;
     private String specialite;
     private int yearOfXP;
+    private ArrayList<CreneauDTO> creneaux;
 
     public ConsultantRecruteurDTO(String name, String specialite, int yearOfXP)
     {
@@ -43,5 +46,23 @@ public class ConsultantRecruteurDTO
     public void setYearOfXP(int yearOfXP)
     {
         this.yearOfXP = yearOfXP;
+    }
+
+    /**
+     * Getter crenaux
+     * @return
+     */
+    public ArrayList<CreneauDTO> getCreneaux()
+    {
+        return creneaux;
+    }
+
+    /**
+     * Setter creneaux
+     * @param creneaux
+     */
+    public void setCreneaux(ArrayList<CreneauDTO> creneaux)
+    {
+        this.creneaux = creneaux;
     }
 }

@@ -1,40 +1,88 @@
 package model.entretien;
 
-import common.dto.entretien.CandidatDTO;
 import common.dto.entretien.ConsultantRecruteurDTO;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 
-class ConsultantRecruteur {
+class ConsultantRecruteur
+{
     private String name;
     private String specialite;
     private int yearOfXP;
+    private ArrayList<Creneau> creneaux;
 
-    public ConsultantRecruteur(String name, String specialite, int yearOfXP) {
+    /**
+     * Constructeur par défaut ConsultantRecruteur
+     */
+    public ConsultantRecruteur() { }
+
+    /**
+     * Constructeur ConsultantRecruteur
+     * @param name
+     * @param specialite
+     * @param yearOfXP
+     */
+    public ConsultantRecruteur(String name, String specialite, int yearOfXP)
+    {
         this.name = name;
         this.specialite = specialite;
         this.yearOfXP = yearOfXP;
     }
 
-    public ConsultantRecruteur(ConsultantRecruteurDTO consultantRecruteurDTO) {
+    /**
+     * Constructeur ConsultantRecruteur
+     * @param consultantRecruteurDTO
+     */
+    public ConsultantRecruteur(ConsultantRecruteurDTO consultantRecruteurDTO)
+    {
         this.name = consultantRecruteurDTO.getName();
         this.specialite = consultantRecruteurDTO.getSpecialite();
         this.yearOfXP = consultantRecruteurDTO.getYearOfXP();
     }
 
-    public ConsultantRecruteur() {
-        
-    }
-
-    public String getName() {
+    /**
+     * Getter name
+     * @return
+     */
+    public String getName()
+    {
         return name;
     }
 
-    public String getSpecialite() {
+    /**
+     * Getter specialite
+     * @return
+     */
+    public String getSpecialite()
+    {
         return specialite;
     }
 
-    public int getYearOfXP() {
+    /**
+     * Getter années d'exoeriences
+     * @return
+     */
+    public int getYearOfXP()
+    {
         return yearOfXP;
+    }
+
+    /**
+     * Getter crenaux
+     * @return
+     */
+    public ArrayList<Creneau> getCreneaux()
+    {
+        return this.creneaux;
+    }
+
+    /**
+     *
+     * @param candidat
+     * @return
+     */
+    public boolean peutTester(Candidat candidat)
+    {
+        return this.yearOfXP >= candidat.getYearOfXP();
     }
 }
