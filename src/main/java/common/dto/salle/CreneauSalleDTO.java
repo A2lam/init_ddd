@@ -1,7 +1,5 @@
 package common.dto.salle;
 
-import common.dto.entretien.HeureEntretienDTO;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;

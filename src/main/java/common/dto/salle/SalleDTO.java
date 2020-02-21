@@ -1,6 +1,5 @@
 package common.dto.salle;
 
-import common.dto.entretien.CreneauEntretienDTO;
 import model.salle.Salle;
 
 import java.util.ArrayList;

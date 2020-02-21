@@ -1,6 +1,5 @@
 package model.salle;
 
-import common.dto.entretien.CreneauEntretienDTO;
 import common.dto.salle.CreneauSalleDTO;
 import common.dto.salle.SalleDTO;
 
