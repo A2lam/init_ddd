@@ -1,19 +1,19 @@
 package common.dto.entretien;
 
-public class CandidatDTO
+public class ConsultantRecruteurDTO
 {
     private String name;
     private String specialite;
     private int yearOfXP;
 
-    public CandidatDTO(String name, String specialite, int yearOfXP)
+    public ConsultantRecruteurDTO(String name, String specialite, int yearOfXP)
     {
         this.name = name;
         this.specialite = specialite;
         this.yearOfXP = yearOfXP;
     }
 
-    public CandidatDTO() { }
+    public ConsultantRecruteurDTO() { }
 
     public String getName()
     {

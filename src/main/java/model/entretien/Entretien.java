@@ -14,6 +14,7 @@ public class Entretien
     private Creneau creneau;
     private String raisonAnnulation;
     private Candidat candidat;
+    private ConsultantRecruteur consultantRecruteur;
 
     public Entretien(LocalDateTime date, Candidat candidat)
     {
@@ -21,6 +22,11 @@ public class Entretien
         this.creneau = new Creneau(date, new Heure(2));
         this.candidat = candidat;
         this.statut = EntretienStatus.EN_ATTENTE;
+        this.consultantRecruteur = getAvailableConsultantRecruteur(candidat, date);
+    }
+
+    private ConsultantRecruteur getAvailableConsultantRecruteur(Candidat candidat, LocalDateTime date) {
+        return new ConsultantRecruteur();
     }
 
     public Entretien(EntretienDTO entretienDTO){
