@@ -3,6 +3,7 @@ package common.dto.salle;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Objects;
 
 public class CreneauSalleDTO
 {
@@ -51,5 +52,21 @@ public class CreneauSalleDTO
     public void setHeureFin(LocalTime heureFin)
     {
         this.heureFin = heureFin;
+    }
+
+    @Override
+    public boolean equals(Object c)
+    {
+        if (this == c)
+            return true;
+
+        if (c == null || getClass() != c.getClass())
+            return false;
+
+        CreneauSalleDTO creneau = (CreneauSalleDTO) c;
+
+        return Objects.equals(date, creneau.date) &&
+                Objects.equals(heureDebut, creneau.heureDebut) &&
+                Objects.equals(heureFin, creneau.heureFin);
     }
 }
