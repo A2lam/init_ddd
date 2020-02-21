@@ -1,15 +1,16 @@
-package common.dto.entretien;
+package common.dto.salle;
 
-import model.entretien.Salle;
+import common.dto.entretien.CreneauEntretienDTO;
+import model.salle.Salle;
 
 import java.util.ArrayList;
 
 public class SalleDTO {
     String name;
     int capacite;
-    ArrayList<CreneauDTO> creneaux;
+    ArrayList<CreneauSalleDTO> creneaux;
 
-    public SalleDTO(String name, int capacite, ArrayList<CreneauDTO> creneaux) {
+    public SalleDTO(String name, int capacite, ArrayList<CreneauSalleDTO> creneaux) {
         this.name = name;
         this.capacite = capacite;
         this.creneaux = creneaux;
@@ -37,11 +38,11 @@ public class SalleDTO {
         this.capacite = capacite;
     }
 
-    public ArrayList<CreneauDTO> getCreneaux() {
+    public ArrayList<CreneauSalleDTO> getCreneaux() {
         return creneaux;
     }
 
-    public void setCreneaux(ArrayList<CreneauDTO> creneaux) {
+    public void setCreneaux(ArrayList<CreneauSalleDTO> creneaux) {
         this.creneaux = creneaux;
     }
 }

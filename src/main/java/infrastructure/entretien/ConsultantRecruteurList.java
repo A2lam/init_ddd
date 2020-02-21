@@ -2,7 +2,7 @@ package infrastructure.entretien;
 
 import common.dto.entretien.CandidatDTO;
 import common.dto.entretien.ConsultantRecruteurDTO;
-import common.dto.entretien.CreneauDTO;
+import common.dto.entretien.CreneauEntretienDTO;
 import model.entretien.ConsultantsRecruteurs;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class ConsultantRecruteurList implements ConsultantsRecruteurs
     }
 
     @Override
-    public ConsultantRecruteurDTO trouverConsultantRecruteurSelonDisponibilteEtCandidat(CreneauDTO creneau, CandidatDTO candidat)
+    public ConsultantRecruteurDTO trouverConsultantRecruteurSelonDisponibilteEtCandidat(CreneauEntretienDTO creneau, CandidatDTO candidat)
     {
         return consultantsRecruteurs
                 .stream()

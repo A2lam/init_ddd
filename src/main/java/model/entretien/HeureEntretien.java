@@ -1,10 +1,10 @@
 package model.entretien;
 
-class Heure
+class HeureEntretien
 {
     private int nbHeure;
 
-    public Heure(int nbHeure)
+    public HeureEntretien(int nbHeure)
     {
         if (nbHeure <= 0)
             throw new IllegalArgumentException();

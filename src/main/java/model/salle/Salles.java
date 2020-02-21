@@ -1,9 +1,7 @@
-package model.entretien;
+package model.salle;
 
-import common.dto.entretien.CandidatDTO;
-import common.dto.entretien.SalleDTO;
-import common.dto.entretien.CreneauDTO;
-import model.entretien.Salle;
+import common.dto.salle.SalleDTO;
+import common.dto.entretien.CreneauEntretienDTO;
 
 import java.util.ArrayList;
 
@@ -26,7 +24,7 @@ public interface Salles
      * @param creneau
      * @return
      */
-    public SalleDTO trouverSalleSelonDisponibilite(CreneauDTO creneau);
+    public SalleDTO trouverSalleSelonDisponibilite(CreneauEntretienDTO creneau);
 
     /**
      * Créer une nouvelle salle

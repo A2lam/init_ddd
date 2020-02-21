@@ -1,23 +1,25 @@
-package common.dto.entretien;
+package common.dto.salle;
+
+import common.dto.entretien.HeureEntretienDTO;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-public class CreneauDTO
+public class CreneauSalleDTO
 {
     private LocalDate date;
     private LocalTime heureDebut;
     private LocalTime heureFin;
 
-    public CreneauDTO(LocalDateTime dateTime, HeureDTO duree)
+    public CreneauSalleDTO(LocalDateTime dateTime, HeureSalleDTO duree)
     {
         this.date = dateTime.toLocalDate();
         this.heureDebut = dateTime.toLocalTime();
         this.heureFin = this.heureDebut.plusHours(duree.getNbHeure());
     }
 
-    public CreneauDTO(LocalDate date, LocalTime heureDebut, LocalTime heureFin) {
+    public CreneauSalleDTO(LocalDate date, LocalTime heureDebut, LocalTime heureFin) {
         this.date = date;
         this.heureDebut = heureDebut;
         this.heureFin = heureFin;

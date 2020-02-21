@@ -1,10 +1,10 @@
-package common.dto.entretien;
+package model.salle;
 
-public class HeureDTO
+class HeureSalle
 {
     private int nbHeure;
 
-    public HeureDTO(int nbHeure)
+    public HeureSalle(int nbHeure)
     {
         if (nbHeure <= 0)
             throw new IllegalArgumentException();
@@ -15,10 +15,5 @@ public class HeureDTO
     public int getNbHeure()
     {
         return nbHeure;
-    }
-
-    public void setNbHeure(int nbHeure)
-    {
-        this.nbHeure = nbHeure;
     }
 }

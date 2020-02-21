@@ -1,9 +1,5 @@
 package model.entretien;
 
-import common.dto.entretien.CandidatDTO;
-import common.dto.entretien.CreneauDTO;
-import common.dto.entretien.EntretienDTO;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -11,7 +7,7 @@ public class Entretien
 {
     private EntretienID entretienID;
     private EntretienStatus statut;
-    private Creneau creneau;
+    private CreneauEntretien creneau;
     private String raisonAnnulation;
     private Candidat candidat;
     private ConsultantRecruteur consultantRecruteur;
@@ -19,7 +15,7 @@ public class Entretien
     public Entretien(LocalDateTime date, Candidat candidat)
     {
         this.entretienID = new EntretienID();
-        this.creneau = new Creneau(date, new Heure(2));
+        this.creneau = new CreneauEntretien(date, new HeureEntretien(2));
         this.candidat = candidat;
         this.statut = EntretienStatus.EN_ATTENTE;
         //TODO add consultantRecruteur
@@ -38,7 +34,7 @@ public class Entretien
         return statut;
     }
 
-    public Creneau getCreneau()
+    public CreneauEntretien getCreneau()
     {
         return creneau;
     }

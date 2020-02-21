@@ -9,7 +9,7 @@ class ConsultantRecruteur
     private String name;
     private String specialite;
     private int yearOfXP;
-    private ArrayList<Creneau> creneaux;
+    private ArrayList<CreneauEntretien> creneaux;
 
 
     /**
@@ -67,7 +67,7 @@ class ConsultantRecruteur
      * Getter crenaux
      * @return
      */
-    public ArrayList<Creneau> getCreneaux()
+    public ArrayList<CreneauEntretien> getCreneaux()
     {
         return this.creneaux;
     }

@@ -1,18 +1,20 @@
 package model.entretien;
 
 import common.dto.entretien.*;
+import common.dto.salle.SalleDTO;
+import model.salle.Salle;
 import org.dozer.DozerBeanMapper;
 
 public class Mapper {
 
     private static DozerBeanMapper mapper = new DozerBeanMapper();
 
-    public static HeureDTO HeureToHeureDTO(Heure heure){
-        return mapper.map(heure, HeureDTO.class);
+    public static HeureEntretienDTO HeureToHeureDTO(HeureEntretien heure){
+        return mapper.map(heure, HeureEntretienDTO.class);
     }
 
-    public static Heure HeureDTOToHeure(HeureDTO heure){
-        return mapper.map(heure, Heure.class);
+    public static HeureEntretien HeureDTOToHeure(HeureEntretienDTO heure){
+        return mapper.map(heure, HeureEntretien.class);
     }
 
     public static CandidatDTO CandidatToCandidatDTO(Candidat candidat){
@@ -23,12 +25,12 @@ public class Mapper {
         return mapper.map(candidatDTO, Candidat.class);
     }
 
-    public static CreneauDTO CreneauToCreneauDTO(Creneau Creneau){
-        return mapper.map(Creneau, CreneauDTO.class);
+    public static CreneauEntretienDTO CreneauToCreneauDTO(CreneauEntretien Creneau){
+        return mapper.map(Creneau, CreneauEntretienDTO.class);
     }
 
-    public static Creneau CreneauDTOToCreneau(CreneauDTO CreneauDTO){
-        return mapper.map(CreneauDTO, Creneau.class);
+    public static CreneauEntretien CreneauDTOToCreneau(CreneauEntretienDTO CreneauEntretienDTO){
+        return mapper.map(CreneauEntretienDTO, CreneauEntretien.class);
     }
 
     public static ConsultantRecruteurDTO ConsultantRecruteurToConsultantRecruteurDTO(ConsultantRecruteur ConsultantRecruteur){

@@ -2,7 +2,7 @@ package model.entretien;
 
 import common.dto.entretien.CandidatDTO;
 import common.dto.entretien.ConsultantRecruteurDTO;
-import common.dto.entretien.CreneauDTO;
+import common.dto.entretien.CreneauEntretienDTO;
 
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ public interface ConsultantsRecruteurs
      * @param candidat
      * @return
      */
-    public ConsultantRecruteurDTO trouverConsultantRecruteurSelonDisponibilteEtCandidat(CreneauDTO creneau, CandidatDTO candidat);
+    public ConsultantRecruteurDTO trouverConsultantRecruteurSelonDisponibilteEtCandidat(CreneauEntretienDTO creneau, CandidatDTO candidat);
 
     /**
      * Crée un nouveau consultant rectruteur

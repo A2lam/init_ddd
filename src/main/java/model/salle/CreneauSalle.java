@@ -1,29 +1,30 @@
-package model.entretien;
+package model.salle;
 
-import common.dto.entretien.CreneauDTO;
+import common.dto.entretien.CreneauEntretienDTO;
+import common.dto.salle.CreneauSalleDTO;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Objects;
 
-class Creneau
+class CreneauSalle
 {
     private LocalDate date;
     private LocalTime heureDebut;
     private LocalTime heureFin;
 
-    public Creneau(LocalDateTime dateTime, Heure duree)
+    public CreneauSalle(LocalDateTime dateTime, HeureSalle duree)
     {
         this.date = dateTime.toLocalDate();
         this.heureDebut = dateTime.toLocalTime();
         this.heureFin = this.heureDebut.plusHours(duree.getNbHeure());
     }
 
-    public Creneau(CreneauDTO creneauDTO){
-        this.date = creneauDTO.getDate();
-        this.heureDebut = creneauDTO.getHeureDebut();
-        this.heureFin = creneauDTO.getHeureFin();
+    public CreneauSalle(CreneauSalleDTO creneauSalleDTO){
+        this.date = creneauSalleDTO.getDate();
+        this.heureDebut = creneauSalleDTO.getHeureDebut();
+        this.heureFin = creneauSalleDTO.getHeureFin();
     }
 
     public LocalDate getDate()
@@ -50,7 +51,7 @@ class Creneau
         if (c == null || getClass() != c.getClass())
             return false;
 
-        Creneau creneau = (Creneau) c;
+        CreneauSalle creneau = (CreneauSalle) c;
 
         return Objects.equals(date, creneau.date) &&
             Objects.equals(heureDebut, creneau.heureDebut) &&

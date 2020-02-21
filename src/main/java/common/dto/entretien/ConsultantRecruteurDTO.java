@@ -7,7 +7,7 @@ public class ConsultantRecruteurDTO
     private String name;
     private String specialite;
     private int yearOfXP;
-    private ArrayList<CreneauDTO> creneaux;
+    private ArrayList<CreneauEntretienDTO> creneaux;
 
     public ConsultantRecruteurDTO(String name, String specialite, int yearOfXP)
     {
@@ -52,7 +52,7 @@ public class ConsultantRecruteurDTO
      * Getter crenaux
      * @return
      */
-    public ArrayList<CreneauDTO> getCreneaux()
+    public ArrayList<CreneauEntretienDTO> getCreneaux()
     {
         return creneaux;
     }
@@ -61,7 +61,7 @@ public class ConsultantRecruteurDTO
      * Setter creneaux
      * @param creneaux
      */
-    public void setCreneaux(ArrayList<CreneauDTO> creneaux)
+    public void setCreneaux(ArrayList<CreneauEntretienDTO> creneaux)
     {
         this.creneaux = creneaux;
     }
