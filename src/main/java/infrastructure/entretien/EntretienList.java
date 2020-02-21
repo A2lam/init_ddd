@@ -1,7 +1,6 @@
 package infrastructure.entretien;
 
 import common.dto.entretien.EntretienDTO;
-import model.entretien.Entretien;
 import model.entretien.Entretiens;
 
 import java.util.ArrayList;

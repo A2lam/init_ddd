@@ -1,7 +1,7 @@
 package model.salle;
 
+import common.dto.salle.CreneauSalleDTO;
 import common.dto.salle.SalleDTO;
-import common.dto.entretien.CreneauEntretienDTO;
 
 import java.util.ArrayList;
 
@@ -11,7 +11,7 @@ public interface Salles
      * Récupère une liste des selles
      * @return
      */
-    public ArrayList<Salle> recupererSalles();
+    public ArrayList<SalleDTO> recupererSalles();
 
     /**
      * Trouve une salle
@@ -24,7 +24,7 @@ public interface Salles
      * @param creneau
      * @return
      */
-    public SalleDTO trouverSalleSelonDisponibilite(CreneauEntretienDTO creneau);
+    public SalleDTO trouverSalleSelonDisponibilite(CreneauSalleDTO creneau, int capacite);
 
     /**
      * Créer une nouvelle salle

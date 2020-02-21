@@ -33,7 +33,7 @@ public class ConsultantRecruteurList implements ConsultantsRecruteurs
         return consultantsRecruteurs
                 .stream()
                 .filter(consultantRecruteurInList -> consultantRecruteurInList.getYearOfXP() >= candidat.getYearOfXP())
-                .filter(consultantRecruteurInList -> consultantRecruteurInList.getCreneaux().contains(creneau))
+                .filter(consultantRecruteurInList -> !consultantRecruteurInList.getCreneaux().contains(creneau))
                 .findAny()
                 .orElse(null);
     }
