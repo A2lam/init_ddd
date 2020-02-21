@@ -22,19 +22,10 @@ public class Entretien
         this.creneau = new Creneau(date, new Heure(2));
         this.candidat = candidat;
         this.statut = EntretienStatus.EN_ATTENTE;
-        this.consultantRecruteur = getAvailableConsultantRecruteur(candidat, date);
+        //TODO add consultantRecruteur
     }
 
-    private ConsultantRecruteur getAvailableConsultantRecruteur(Candidat candidat, LocalDateTime date) {
-        return new ConsultantRecruteur();
-    }
-
-    public Entretien(EntretienDTO entretienDTO){
-        this.entretienID = entretienDTO.getEntretienID();
-        this.statut = entretienDTO.getStatut();
-        this.creneau = new Creneau(entretienDTO.getCreneau());
-        this.raisonAnnulation = entretienDTO.getRaisonAnnulation();
-        this.candidat = new Candidat(entretienDTO.getCandidat());
+    public Entretien() {
     }
 
     public EntretienID getEntretienID()
@@ -50,27 +41,6 @@ public class Entretien
     public Creneau getCreneau()
     {
         return creneau;
-    }
-
-    public CreneauDTO getCreneauDTO()
-    {
-        CreneauDTO creneauDTO = new CreneauDTO();
-        creneauDTO.setDate(creneau.getDate());
-        creneauDTO.setHeureDebut(creneau.getHeureDebut());
-        creneauDTO.setHeureFin(creneau.getHeureDebut());
-        return creneauDTO;
-    }
-
-    public Candidat getCandidat() {
-        return candidat;
-    }
-
-    public CandidatDTO getCandidatDTO(){
-        CandidatDTO candidatDTO = new CandidatDTO();
-        candidatDTO.setName(candidat.getName());
-        candidatDTO.setSpecialite(candidat.getSpecialite());
-        candidatDTO.setYearOfXP(candidat.getYearOfXP());
-        return candidatDTO;
     }
 
     public String getRaisonAnnulation()

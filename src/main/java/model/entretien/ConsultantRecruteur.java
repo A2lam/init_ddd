@@ -11,10 +11,6 @@ class ConsultantRecruteur
     private int yearOfXP;
     private ArrayList<Creneau> creneaux;
 
-    /**
-     * Constructeur par défaut ConsultantRecruteur
-     */
-    public ConsultantRecruteur() { }
 
     /**
      * Constructeur ConsultantRecruteur

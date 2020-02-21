@@ -22,14 +22,6 @@ public class EntretienDTO
         this.statut = EntretienStatus.EN_ATTENTE;
     }
 
-    public EntretienDTO(Entretien entretien){
-        this.entretienID = entretien.getEntretienID();
-        this.creneau = entretien.getCreneauDTO();
-        this.candidat = entretien.getCandidatDTO();
-        this.raisonAnnulation = entretien.getRaisonAnnulation();
-        this.statut = entretien.getStatut();
-    }
-
     public EntretienID getEntretienID()
     {
         return entretienID;
