@@ -7,6 +7,12 @@ public class SalleDTO {
     int capacite;
     ArrayList<CreneauDTO> creneaux;
 
+    public SalleDTO(String name, int capacite, ArrayList<CreneauDTO> creneaux) {
+        this.name = name;
+        this.capacite = capacite;
+        this.creneaux = creneaux;
+    }
+
     public String getName() {
         return name;
     }
