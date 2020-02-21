@@ -62,7 +62,7 @@ public class Salle {
         this.creneaux = creneaux;
     }
 
-    private void reserverSalle(CreneauSalle creneau){
+    public void reserverSalle(CreneauSalle creneau){
         for (CreneauSalle creneauOccupied: this.creneaux) {
             if (creneau.equals(creneauOccupied)){
                 System.out.println("Cette salle est déjà prise");
@@ -70,5 +70,10 @@ public class Salle {
             }
         }
         creneaux.add(creneau);
+    }
+
+    public CreneauSalle creneauSalleDTOToCreneauSalle(CreneauSalleDTO creneauSalleDTO)
+    {
+        return new CreneauSalle(creneauSalleDTO);
     }
 }

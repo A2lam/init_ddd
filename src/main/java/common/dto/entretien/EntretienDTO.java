@@ -1,5 +1,6 @@
 package common.dto.entretien;
 
+import model.entretien.Entretien;
 import model.entretien.EntretienID;
 import model.entretien.EntretienStatus;
 
@@ -19,6 +20,14 @@ public class EntretienDTO
         this.creneau = new CreneauEntretienDTO(date, new HeureEntretienDTO(2));
         this.candidat = candidat;
         this.statut = EntretienStatus.EN_ATTENTE;
+    }
+
+    public EntretienDTO(Entretien entretien){
+        this.entretienID = entretien.getEntretienID();
+        this.creneau = entretien.getCreneauDTO();
+        this.candidat = entretien.getCandidatDTO();
+        this.raisonAnnulation = entretien.getRaisonAnnulation();
+        this.statut = entretien.getStatut();
     }
 
     public EntretienID getEntretienID()

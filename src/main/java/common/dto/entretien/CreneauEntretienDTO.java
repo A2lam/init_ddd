@@ -23,6 +23,11 @@ public class CreneauEntretienDTO
         this.heureFin = heureFin;
     }
 
+    public CreneauEntretienDTO()
+    {
+
+    }
+
     public LocalDate getDate()
     {
         return date;

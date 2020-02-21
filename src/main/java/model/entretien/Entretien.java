@@ -1,5 +1,9 @@
 package model.entretien;
 
+import common.dto.entretien.CandidatDTO;
+import common.dto.entretien.CreneauEntretienDTO;
+import common.dto.entretien.EntretienDTO;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -19,6 +23,14 @@ public class Entretien
         this.candidat = candidat;
         this.statut = EntretienStatus.EN_ATTENTE;
         //TODO add consultantRecruteur
+    }
+
+    public Entretien(EntretienDTO entretienDTO){
+        this.entretienID = entretienDTO.getEntretienID();
+        this.statut = entretienDTO.getStatut();
+        this.creneau = new CreneauEntretien(entretienDTO.getCreneau());
+        this.raisonAnnulation = entretienDTO.getRaisonAnnulation();
+        this.candidat = new Candidat(entretienDTO.getCandidat());
     }
 
     public Entretien() {
@@ -67,5 +79,26 @@ public class Entretien
 
         this.statut = EntretienStatus.ANNULE;
         this.raisonAnnulation = raison;
+    }
+
+    public CreneauEntretienDTO getCreneauDTO()
+    {
+        CreneauEntretienDTO creneauDTO = new CreneauEntretienDTO();
+        creneauDTO.setDate(creneau.getDate());
+        creneauDTO.setHeureDebut(creneau.getHeureDebut());
+        creneauDTO.setHeureFin(creneau.getHeureDebut());
+        return creneauDTO;
+    }
+
+    public Candidat getCandidat() {
+        return candidat;
+    }
+
+    public CandidatDTO getCandidatDTO(){
+        CandidatDTO candidatDTO = new CandidatDTO();
+        candidatDTO.setName(candidat.getName());
+        candidatDTO.setSpecialite(candidat.getSpecialite());
+        candidatDTO.setYearOfXP(candidat.getYearOfXP());
+        return candidatDTO;
     }
 }

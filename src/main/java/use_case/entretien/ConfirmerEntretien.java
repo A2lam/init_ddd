@@ -4,13 +4,13 @@ import common.dto.entretien.EntretienDTO;
 import infrastructure.entretien.EntretienList;
 import model.entretien.Entretien;
 import model.entretien.Entretiens;
-import model.entretien.Mapper;
 
 import java.util.UUID;
 
 public class ConfirmerEntretien
 {
     Entretiens entretiens;
+
     public ConfirmerEntretien()
     {
         this.entretiens = new EntretienList();
@@ -19,9 +19,9 @@ public class ConfirmerEntretien
     public void confirmer(UUID uuid)
     {
         EntretienDTO entretienDTO = entretiens.trouverEntretien(uuid);
-        Entretien entretien = Mapper.EntretienDTOToEntretien(entretienDTO);
+        Entretien entretien = new Entretien(entretienDTO);
         entretien.confirmer();
-        entretienDTO = Mapper.EntretienToEntretienDTO(entretien);
+        entretienDTO = new EntretienDTO(entretien);
         entretiens.modifierEntretien(entretienDTO);
     }
 }

@@ -4,9 +4,7 @@ import common.dto.entretien.EntretienDTO;
 import infrastructure.entretien.EntretienList;
 import model.entretien.Entretien;
 import model.entretien.Entretiens;
-import model.entretien.Mapper;
 
-import java.util.Map;
 import java.util.UUID;
 
 public class AnnulerEntretien
@@ -21,9 +19,9 @@ public class AnnulerEntretien
     public void annuler(UUID uuid, String raison)
     {
         EntretienDTO entretienDTO = entretiens.trouverEntretien(uuid);
-        Entretien entretien = Mapper.EntretienDTOToEntretien(entretienDTO);
+        Entretien entretien = new Entretien(entretienDTO);
         entretien.annuler(raison);
-        entretienDTO = Mapper.EntretienToEntretienDTO(entretien);
+        entretienDTO = new EntretienDTO(entretien);
         entretiens.modifierEntretien(entretienDTO);
     }
 }
